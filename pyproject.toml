@@ -1,0 +1,14 @@
+[project]
+name = "agreement-audit-vision"
+version = "1.0.0"
+description = "LLM-vision pipeline that audits scanned agreements for customer name, stamp and signature"
+requires-python = ">=3.10"
+dependencies = ["pymupdf>=1.24", "pillow>=10", "requests>=2.31"]
+
+[project.optional-dependencies]
+sheets = ["gspread>=6", "google-api-python-client>=2", "google-auth>=2"]
+dev = ["pytest>=8"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

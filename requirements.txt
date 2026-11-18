@@ -1,0 +1,9 @@
+pymupdf>=1.24
+pillow>=10
+requests>=2.31
+# Google Sheets / Drive runner
+gspread>=6
+google-api-python-client>=2
+google-auth>=2
+# tests
+pytest>=8

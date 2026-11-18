@@ -1,0 +1,16 @@
+Inspect this agreement page image carefully.
+
+1. "society_name":
+   - Locate the main table at the top. Read the text written inside the cell next to or below "Name of society (customer)" or "Name of society".
+   - Extract the COMPLETE name written in that box. It can be a Housing Society, Apartment, Association, OR a Private Limited Construction / Builder company (e.g., "Sunrise Builders Pvt Ltd", "Lakeview Apartment Owners Association", "Green Meadows CHSL").
+   - NEVER output "Acme Services Pvt. Ltd." (that is the service vendor) or a person's name.
+   - If that customer box is blank or not on this page, use exactly: "Not listed".
+   - The name may be HANDWRITTEN. Hint from the file name: "Green Meadows B wing". The written name is usually similar but often longer (e.g. it adds "Sahakari Gruhnirman Sanstha", "CHS Ltd", "Co-op Housing Society"). Copy what is actually written in the box; use the hint only to help read unclear handwriting.
+   - Also answer "name_box_filled": "Yes" if ANYTHING is typed or handwritten in that customer box (even if hard to read), "No" if the box is empty.
+
+2. "is_stamped": "Yes" if you can see ANY of these anywhere on the page, especially in the bottom signature area: a circular or rectangular rubber ink stamp or seal (purple, blue or black; society seal, company seal, notary seal), a government e-Stamp certificate or stamp paper, a revenue stamp, or an "eSigned using Aadhaar" block. Otherwise "No".
+
+3. "is_signed": "Yes" if you can see ANY handwritten signature, initials or pen scribble, usually above or beside words like "SECRETARY", "Chairman", "Authorised Signatory", "For ... CHS Ltd", or in a signature box, or an "eSigned using Aadhaar" block. Handwriting used only to FILL IN form fields (a name, designation or phone number written in capital letters inside a table) is NOT a signature. Otherwise "No".
+
+Return strictly one valid JSON object in this exact format (no markdown, no backticks, no extra text):
+{"society_name": "...", "name_box_filled": "Yes or No", "is_stamped": "Yes or No", "is_signed": "Yes or No"}
